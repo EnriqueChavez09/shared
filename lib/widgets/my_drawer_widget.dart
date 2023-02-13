@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared/utils/sp_glogal.dart';
 
 class MyDrawerWidget extends StatelessWidget {
   @override
@@ -19,25 +20,25 @@ class MyDrawerWidget extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  CircleAvatar(
+                children: [
+                  const CircleAvatar(
                     backgroundImage: AssetImage(
                       "assets/images/perfil.jpg",
                     ),
-                    radius: 40.0,
+                    radius: 35.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
-                    "Renildo Enrique Chavez Silva",
-                    style: TextStyle(
+                    SPGlobal().getString("fullName"),
+                    style: const TextStyle(
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    "rchavezs@uni.pe",
-                    style: TextStyle(
+                    SPGlobal().getString("email"),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12.0,
                     ),
@@ -50,12 +51,54 @@ class MyDrawerWidget extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, "perfil");
             },
-            child: ListTile(
+            child: const ListTile(
               leading: Icon(
                 Icons.person,
               ),
               title: Text(
-                "Mi perfil",
+                "My Profile",
+              ),
+              minLeadingWidth: 20.0,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "perfil");
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.shopping_bag,
+              ),
+              title: Text(
+                "My Purchases",
+              ),
+              minLeadingWidth: 20.0,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "perfil");
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.shopping_cart,
+              ),
+              title: Text(
+                "Cart",
+              ),
+              minLeadingWidth: 20.0,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "perfil");
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.settings,
+              ),
+              title: Text(
+                "Settings",
               ),
               minLeadingWidth: 20.0,
             ),

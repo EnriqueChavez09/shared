@@ -16,6 +16,6 @@ class SPGlobal {
   }
 
   String getString(key) {
-    return prefs.getString(key) ?? "-";
+    return prefs.getString(key) ?? "No encontrado";
   }
 }

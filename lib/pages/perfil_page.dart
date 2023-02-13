@@ -11,6 +11,9 @@ class _PerfilPageState extends State<PerfilPage> {
   String fullName = "";
   String email = "";
   String address = "";
+  String age = "";
+  String country = "";
+  String city = "";
 
   @override
   void initState() {
@@ -18,7 +21,7 @@ class _PerfilPageState extends State<PerfilPage> {
     getData();
   }
 
-  getData() async {
+  getData() {
     // SharedPreferences userData = await SharedPreferences.getInstance();
     // fullName = userData.getString("fullName") ?? "-";
     // email = userData.getString("email") ?? "-";
@@ -26,6 +29,9 @@ class _PerfilPageState extends State<PerfilPage> {
     fullName = SPGlobal().getString("fullName");
     email = SPGlobal().getString("email");
     address = SPGlobal().getString("address");
+    age = SPGlobal().getString("age");
+    country = SPGlobal().getString("country");
+    city = SPGlobal().getString("city");
     setState(() {});
   }
 
@@ -33,7 +39,7 @@ class _PerfilPageState extends State<PerfilPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "My Account",
         ),
       ),
@@ -43,14 +49,124 @@ class _PerfilPageState extends State<PerfilPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                fullName,
+              const CircleAvatar(
+                backgroundImage: AssetImage(
+                  "assets/images/perfil.jpg",
+                ),
+                radius: 80.0,
               ),
-              Text(
-                email,
+              const SizedBox(
+                height: 20.0,
               ),
-              Text(
-                address,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    fullName,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "Full Name",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    email,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "Email",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    age,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "Age",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    country,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "Country",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    city,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "City",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(
+                    address,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Text(
+                    "Address",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black45,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
